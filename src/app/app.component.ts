@@ -73,6 +73,7 @@ export class AppComponent {
   }
 
   fileSelected(event: any) {
+    this.model?.destroy();
     const file: File = event.target.files[0];
     if (file) {
       const url = window.URL.createObjectURL(file);
