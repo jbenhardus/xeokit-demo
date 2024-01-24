@@ -41,11 +41,14 @@ export class AppComponent {
     }
   }
 
-  loadModel() {
+  loadModel(src?: string) {
+    if (!src) {
+      src = './assets/models/xkt/v8/ifc/OTCConferenceCenter.ifc.xkt';
+    }
     if (this.viewer && this.xktLoader) {
       this.model = this.xktLoader.load({
         id: 'myModel',
-        src: './assets/models/xkt/v8/ifc/OTCConferenceCenter.ifc.xkt',
+        src,
         saoEnabled: true,
         edges: false,
         objectDefaults: {
@@ -66,6 +69,14 @@ export class AppComponent {
           this.viewer.cameraFlight.jumpTo(this.model);
         }
       });
+    }
+  }
+
+  fileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      const url = window.URL.createObjectURL(file);
+      this.loadModel(url);
     }
   }
 }

@@ -1,4 +1,7 @@
-<button (click)="loadModel()">Load Model</button>
+<div>
+  <input type="file" (change)="fileSelected($event)" />
+  <button (click)="loadModel()">Load Model</button>
+</div>
 <input type="checkbox" id="explorer_toggle" />
 <label
   for="explorer_toggle"
