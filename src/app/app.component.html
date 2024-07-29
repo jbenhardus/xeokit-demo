@@ -1,6 +1,35 @@
 <div>
-  <input type="file" (change)="fileSelected($event)" />
+  <input type="file" multiple (change)="fileSelected($event)" />
   <button (click)="loadModel()">Load Model</button>
+  <select [(ngModel)]="gltfId">
+    <option value="11_MB_complex">11 MB</option>
+    <option value="21_KB">21 KB</option>
+    <option value="70_MB">70 MB</option>
+    <option value="100_MB">100 MB</option>
+    <option value="160_MB">160 MB</option>
+    <option value="500_MB">500 MB</option>
+    <option value="560_MB_Naples">560 MB</option>
+    <option value="2300_MB_Cuyahoga">2300 MB</option>
+  </select>
+  <button (click)="loadGLTF()">Load GLTF</button>
+  <select [(ngModel)]="glbId">
+    <option value="file1">File 1</option>
+    <option value="file3">File 3</option>
+    <option value="file4">File 4</option>
+    <option value="file5">File 5</option>
+    <option value="file7">File 7</option>
+    <option value="file12">File 12</option>
+    <option value="file15">File 15</option>
+    <option value="file16">File 16</option>
+    <option value="file24">File 24</option>
+    <option value="file29">File 29</option>
+    <option value="70_MB">70_MB</option>
+    <option value="500_MB">500_MB</option>
+    <option value="500_MB_aws">500_MB_aws</option>
+    <option value="560_MB_Naples">560 MB</option>
+    <option value="2300_MB_Cuyahoga">2300 MB</option>
+  </select>
+  <button (click)="loadGLB()">Load GLB</button>
 </div>
 <input type="checkbox" id="explorer_toggle" />
 <label
